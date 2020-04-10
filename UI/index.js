@@ -24,6 +24,46 @@ createPanel = function(){
         $('body').removeClass(nowClass).addClass(newClass);
         $('#font_plan').removeClass(nowClass).addClass(newClass);
     });
+
+    setAction();
+}
+
+setAction = function(){
+    $('input.login_id').keydown(function(e){
+        if(e.originalEvent.code == 'Enter'){
+            $('#next_btn').click();
+        }
+    });
+
+    $('input.password').keydown(function(e){
+        if(e.originalEvent.code == 'Enter'){
+            $('#login_btn').click();
+        }
+    });
+
+    $('#next_btn').click(function(){
+        $('.login_id_panel').addClass('hidden');
+        $('.password_panel').removeClass('hidden');
+
+        $('#next_btn').addClass('hidden');
+        $('#pre_btn').removeClass('hidden');
+        $('#login_btn').removeClass('hidden');
+
+        $('.password').focus();
+    });
+
+    $('#pre_btn').click(function(){
+        $('.login_id_panel').removeClass('hidden');
+        $('.password_panel').addClass('hidden');
+
+        $('#next_btn').removeClass('hidden');
+        $('#pre_btn').addClass('hidden');
+        $('#login_btn').addClass('hidden');
+    });
+
+    $('#login_btn').click(function(){
+        console.log('login');
+    });
 }
 
 

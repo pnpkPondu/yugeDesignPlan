@@ -7,7 +7,7 @@
         <script type="text/javascript" src="./index.js"></script>
     </head>
 
-    <body class="color_plan_1 font_plan_1 img_plan_1">
+    <body class="color_plan_3 font_plan_2 img_plan_1">
         <div class="design_palans_panel">
             <select id="color_plan" class="color_plan_1">
                 <option value="1">colorPlan1</option>
@@ -29,11 +29,17 @@
                     <div><div class="title">yuge</div></div>
                 </div>
                 <div class="login_input_panel">
-                    <div><div class="login_input_label">アカウント名</div><input type="text" class="login_id"></div>
-                    <div><div class="login_input_label">パスワード</div><input type="password" class="password"></div>
+                    <div class="login_id_panel">
+                        <div class="login_input_label">アカウント名</div><input type="text" class="login_id">
+                    </div>
+                    <div class="password_panel hidden">
+                        <div class="login_input_label">パスワード</div><input type="password" class="password">
+                    </div>
                 </div>
-                <div class="login_btn_panel">
-                    <button class="login_btn">Login</button>
+                <div class="index_btn_panel">
+                    <button id="next_btn" class="index_btn">Next</button>
+                    <button id="pre_btn" class="index_btn hidden">Pre</button>
+                    <button id="login_btn" class="index_btn hidden">Login</button>
                 </div>
             </div>
         </div>
