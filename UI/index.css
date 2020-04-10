@@ -22,6 +22,11 @@ body.patern_plan_2{
     --index-btn-panel-text-align: center;
     --login-title-img-panel-margin-left: -140px;
 }
+body.patern_plan_3{
+    --login-items-panel-text-align: center;
+    --index-btn-panel-text-align: center;
+    --login-title-img-panel-margin-left: 0;
+}
 
 body.color_plan_1{
     --bg-color: #3D3C3A;
@@ -130,6 +135,7 @@ input{
     height: 70px;
     line-height: var(--title-line-height);
 }
+
 .login_title_img_panel{
     width: 140px;
     text-align: right;
@@ -154,6 +160,26 @@ input{
     max-width: 499px;
     background-color: var(--card-bg-color);
     border-radius: 5px;
+}
+
+.patern_plan_3 .login_title_panel {
+    display: inline-block;
+    vertical-align: middle;
+    width: 30%;
+}
+.patern_plan_3 .login_title_panel > div{
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+.patern_plan_3 .card_panel{
+    width: 70%;
+}
+.patern_plan_3 .title{
+    font-size: 78px;
+}
+.patern_plan_3 .login_title_img_panel img{
+    margin: 20px 0;
 }
 
 .card_panel > div{
@@ -194,6 +220,7 @@ input{
     border: 0;
     border-bottom: 3px solid var(--card-input-border-color);
     border-radius: 0;
+    text-align: center;
 }
 .card_panel .login_id::placeholder,
 .card_panel .password::placeholder{
