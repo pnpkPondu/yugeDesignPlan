@@ -1,11 +1,31 @@
 $(function(){
-    createPanel();
-
-    var displayHeight = $(window).height();
+     var displayHeight = $(window).height();
     $('body').height(displayHeight);
+
+    setPaternPlan(1);
 });
 
+setPaternPlan = function(num){
+    $('.body_panel .login_items_panel').children().remove();
+
+    $('.body_panel .login_items_panel').append(
+        $(`#template_patern_plan_${num}`).render()
+    )
+
+    createPanel();
+}
+
 createPanel = function(){
+    $('#patern_plan').change(function(){
+        var nowClass = $('#patern_plan').prop('class');
+        var newClass = 'patern_plan_'+$(this).val();
+
+        $('body').removeClass(nowClass).addClass(newClass);
+        $('#patern_plan').removeClass(nowClass).addClass(newClass);
+
+        setPaternPlan($(this).val());
+    });
+
     $('#color_plan').change(function(){
         var nowClass = $('#color_plan').prop('class');
         var newClass = 'color_plan_'+$(this).val();
