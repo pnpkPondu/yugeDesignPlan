@@ -20,7 +20,8 @@ body.patern_plan_1{
 body.patern_plan_2{
     --login-items-panel-text-align: center;
     --index-btn-panel-text-align: center;
-    --login-title-img-panel-margin-left: -140px;
+    /* --login-title-img-panel-margin-left: -140px; */
+    --login-title-img-panel-margin-left: 0px;
 }
 body.patern_plan_3{
     --login-items-panel-text-align: center;

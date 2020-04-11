@@ -83,6 +83,7 @@ setAction = function(){
 
     $('#login_btn').click(function(){
         console.log('login');
+        window.location.href = "./app/top/top.html";
     });
 }
 
