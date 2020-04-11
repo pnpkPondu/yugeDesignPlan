@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>TOP画面案</title>
+        <base href="../../">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <script type="text/javascript" src="./plugin/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="./plugin/jsrender.min.js"></script>
+        <link rel="stylesheet" href="./app/top/top.css">
+        <script type="text/javascript" src="./app/top/top.js"></script>
+    </head>
+
+    <body class="patern_plan_1 color_plan_3 font_plan_2">
+        <div class="design_palans_panel">
+            <select id="patern_plan" class="patern_plan_1">
+                <option value="1" selected>paternPlan1</option>
+            </select>
+            <select id="color_plan" class="color_plan_3">
+                <option value="3" selected>colorPlan3</option>
+            </select>
+            <select id="font_plan" class="font_plan_2">
+                <option value="2" selected>fontPlan2</option>
+            </select>
+        </div>
+        <div class="body_panel middle_wrapper">
+            <div>
+                <div class="header_panel">
+                    yuge
+                </div>
+                <div id="tab_panel">
+                    <div id="tab_me" class="tab_item middle_wrapper select_tab">
+                        <div class="tab_item_title">Me</div>
+                    </div>
+                    <div id="tab_friends" class="tab_item middle_wrapper">
+                        <div class="tab_item_title">Friends</div>
+                    </div>
+                </div>
+                <div id="main_panel">
+                    <!-- テンプレート -->
+                </div>
+
+            </div>
+        </div>
+
+
+        <script id="template_patern_plan_1_0" type="text/x-jsrender">
+            <div id="user_info_panel" class="one_item_panel">
+                <div class="item_name">Info</div>
+                <div class="item_contens">
+                    <div class="user_info_img_panel">
+                        <div class="user_info_img no_user_img"></div>
+                    </div>
+                    <div class="user_info_text_panel">
+                        <div class="user_name">testName</div>
+                        <div class="user_info_text">ここに</div>
+                        <div class="user_info_text">他に何を</div>
+                        <div class="user_info_text">だしますか？</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="user_game_panel" class="one_item_panel">
+                <div class="item_name">Games</div>
+                <div class="item_contens">
+
+                        <div class="one_game">
+                            <div class="game_img no_game_img"></div>
+                            <div class="game_name">Game1</div>
+                        </div>
+                        <div class="one_game">
+                            <div class="game_img no_game_img"></div>
+                            <div class="game_name">Game2</div>
+                        </div>
+                        <div class="one_game">
+                            <div class="game_img no_game_img"></div>
+                            <div class="game_name">Game3</div>
+                        </div>
+                        <div class="one_game">
+                            <div class="game_img no_game_img"></div>
+                            <div class="game_name">Game4</div>
+                        </div>
+                        <div class="one_game">
+                            <div class="game_img no_game_img"></div>
+                            <div class="game_name">Game5</div>
+                        </div>
+                   
+                </div>
+            </div>
+        </script>
+
+    </body>
+</html>
