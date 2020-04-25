@@ -16,6 +16,9 @@ setPaternPlan = function(plan, tab){
         $(`#template_patern_plan_${plan}_${tab}`).render()
     );
 
+    var h = $('#main_panel').height() - 132;
+    $('.item_contens').height(h);
+
     setAction();
 }
 
@@ -53,8 +56,8 @@ setAction = function(){
         }
     );
 
-    $('#frends_list_panel .one_friend').off();
-    $('#frends_list_panel .one_friend').click(function(){
+    $('#friends_list_panel .one_friend').off();
+    $('#friends_list_panel .one_friend').click(function(){
         var friendName = $(this).children('.friend_name').text();
 
         $('#friend_game_panel .item_name').text(friendName + '\'s Games');
@@ -63,7 +66,8 @@ setAction = function(){
         $('.one_friend').addClass('not_select_friend');
         $(this).removeClass('not_select_friend').addClass('select_friend');
 
-        $('#friend_game_panel').removeClass('hidden');
+        $('.item_name').removeClass('hidden');
+        $('.item_contens').removeClass('hidden');
     });
 
     $('.one_game').off();

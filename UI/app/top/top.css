@@ -147,14 +147,19 @@ input{
     border-bottom-right-radius: 5px;
 }
 .one_item_panel{
-    width: 90%;
-    margin: auto;
+    display: inline-block;
+    vertical-align: top;
+    width: calc(50% - 20px);
+    margin: 0 10px;
     padding-top: 30px;
+}
+.one_item_panel.hidden{
+    display: none;
 }
 .item_name{
     width: 100%;
     margin-bottom: 10px;
-    text-align: left;
+    text-align: center;
     font-size: 36px;
     font-weight: bold;
     border-bottom: 3px solid var(--contens-panel-border-color);
@@ -165,19 +170,21 @@ input{
 }
 
 /* ユーザー情報 */
+/* #user_info_panel.one_item_panel{
+    width: 210px;
+} */
 
 #user_info_panel .item_contens{
     height: 248px;
 }
 .user_info_img_panel{
-    display: inline-block;
-    vertical-align: top;
-    width: 220px;
+    width: 100%;
+    text-align: center;
 }
 .user_info_img{
     display: inline-block;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 5px;
     background-color: var(--user-info-img-bg-color);
     background-image: url('../../assets/images/no_user_img.png');
@@ -189,33 +196,65 @@ input{
     background-size: 70%;
 }
 .user_info_text_panel{
-    display: inline-block;
-    vertical-align: top;
-    width: calc(100% - 220px);
+    width: 100%;
     font-size: 20px;
-    text-align: left;
+    text-align: center;
 }
-.user_name{
-    font-size: 36px;
+.user_info_text_panel > div{
+    font-size: 0;
+}
+.user_info_text_panel .user_name{
+    font-size: 24px;
+    margin-bottom: 20px;
+    word-break: break-all;
+}
+.user_info_label,
+.user_info_text{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+.user_info_label{
+    width: 50%;
+    text-align: right;
 }
 .user_info_text{
-    font-size: 24px;
+    width: calc(50% - 10px);
+    margin-left: 10px;
+    text-align: left;
 }
 
 /* 所持しているゲーム */
+#friend_game_panel .item_name{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* #user_game_panel.one_item_panel,
+#friend_game_panel.one_item_panel{
+    width: calc(100% - 250px);
+} */
+
 #user_game_panel .item_contens,
 #friend_game_panel .item_contens{
-    overflow-x: auto;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
     white-space: nowrap;
 }
 .one_game{
-    display: inline-block;
+    display: block;
     vertical-align: top;
-    width: 220px;
+    width: 100%;
+    margin-bottom: 20px;
 }
 .game_img{
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    max-width: 600px;
+    height: 150px;
+    margin: 0 auto;
     border-radius: 5px;
     background-color: var(--user-info-img-bg-color);
     background-image: url('../../assets/images/no_user_img.png');
@@ -224,11 +263,10 @@ input{
     background-size: cover;
 }
 .game_img.no_game_img{
-    background-size: 70%;
+    background-size: 105px;
 }
 .game_name{
-    width: 200px;
-    margin-top: 5px;
+    width: 100%;
     font-size: 24px;
     text-align: center;
 
@@ -238,30 +276,28 @@ input{
 }
 
 /* 友達一覧 */
-#frends_list_panel .item_name{
-    margin-bottom: 0;
+/* #friends_list_panel.one_item_panel{
+    width: 210px;
+} */
+
+#friends_list_panel .item_name{
+    margin-bottom: 0px;
 }
-#frends_list_panel .item_contens{
-    overflow-x: auto;
+#friends_list_panel .item_contens{
+    overflow-x: hidden;
+    overflow-y: auto;
     white-space: nowrap;
 }
 .one_friend{
     position: relative;
-    display: inline-block;
-    vertical-align: top;
-    width: 200px;
-    margin: 0 10px;
-    margin-top: 10px;
+    width: 100%;
+    margin-bottom: 20px;
 }
-.one_friend:first-child{
-    margin-left: 0;
-}
-.one_friend:last-child{
-    margin-right: 0;
-}
+
 .friend_img{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
     border-radius: 5px;
     background-color: var(--user-info-img-bg-color);
     background-image: url('../../assets/images/no_user_img.png');
@@ -272,9 +308,11 @@ input{
 .friend_img.no_user_img{
     background-size: 70%;
 }
+.friend_img:first-child{
+    margin-top: 10px;
+}
 .friend_name{
-    width: 200px;
-    margin-top: 5px;
+    width: 100%;
     font-size: 24px;
     text-align: center;
 
@@ -286,31 +324,39 @@ input{
 .one_friend.not_select_friend::before{
     position: absolute;
     top: -10px;
-    left: -10px;
     content: '';
-    width: 220px;
-    height: calc(100% + 10px);
+    width: 100%;
+    height: calc(100% + 20px);
     background-color: #202C3D;
     opacity: 0.8;
 }
 .one_friend:first-child.not_select_friend::before{
-    left: 0px;
-    width: 210px;
+
 }
 .one_friend:last-child.not_select_friend::before{
-    width: 210px;
+
 }
 
 /* ゲーム詳細 */
+#game_details_panel.one_item_panel{
+    width: calc(100% - 20px);
+}
+#game_details_panel .item_name{
+    width: 100%;
+    /* max-width: 600px; */
+    margin: 0px auto 10px;
+}
 .game_details_img_panel{
     display: inline-block;
     vertical-align: top;
-    width: 220px;
+    width: 100%;
+    text-align: center;
 }
 .game_details_img{
     display: inline-block;
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    max-width: 600px;
+    height: 150px;
     border-radius: 5px;
     background-color: var(--user-info-img-bg-color);
     background-image: url('../../assets/images/no_user_img.png');
@@ -319,24 +365,40 @@ input{
     background-size: cover;
 }
 .game_details_img.no_game_img{
-    background-size: 70%;
+    background-size: 105px;
 }
 .game_details_text_panel{
     display: inline-block;
     vertical-align: top;
-    width: calc(100% - 220px);
+    width: 100%;
     font-size: 20px;
-    text-align: left;
+    text-align: center;
 }
-.game_details_game_name{
-    font-size: 36px;
+.game_details_text_panel > div{
+    font-size: 0;
+}
+.game_details_text_panel .game_details_game_name{
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.game_details_label,
+.game_details_text{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+}
+.game_details_label{
+    width: 50%;
+    text-align: right;
 }
 .game_details_text{
-    font-size: 24px;
+    width: calc(50% - 10px);
+    margin-left: 10px;
+    text-align: left;
 }
 
 .game_details_btn_panel{
-    text-align: left;
+    text-align: center;
     margin-top: 10px;
 }
 #game_details_back_btn{
@@ -369,68 +431,77 @@ input{
     }
     #main_panel {
         height: calc(100% - 150px);
-        max-height: 400px;
         min-height: 0;
     }
 
-    .one_item_panel{
+    #user_info_panel.one_item_panel,
+    #friends_list_panel.one_item_panel,
+    #user_game_panel.one_item_panel,
+    #friend_game_panel.one_item_panel{
+        width: calc(50% - 20px);
+    }
+    /* .one_item_panel{
         height: 170px;
         padding-top: 10px;
     }
+    */
+    
     .item_name{
         font-size: 24px;
     }
-
+/*
     .user_info_img_panel{
         width: 120px;
-    }
+    }*/
     .user_info_img{
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
     }
-    .user_info_text_panel{
-        width: calc(100% - 120px);
+    
+    #user_info_panel .user_name{
+        font-size: 18px;
     }
-    .user_name{
-        font-size: 24px;
-    }
+
+    .user_info_label{
+        width: 100%;
+        text-align: center;
+    }    
     .user_info_text{
-        font-size: 14px;
+        width: 100%;
+        text-align: center;
+        margin: 0 0 10px;
     }
 
     .one_game{
-        width: 120px;
+        margin-bottom: 10px;
     }
     .game_img{
-        width: 100px;
-        height: 100px;
+        width: 100%;
+        height: 80px;
+    }
+    .game_img.no_game_img{
+        background-size: 56px;
     }
     .game_name{
-        width: 100px;
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .one_friend{
-        width: 100px;
+        margin-bottom: 10px;
     }
+   
     .friend_img{
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
     }
     .friend_name{
-        width: 100px;
-        font-size: 14px;
+        font-size: 18px;
     }
     .one_friend.not_select_friend::before{
-        position: absolute;
         top: -10px;
-        left: -10px;
-        content: '';
-        width: 120px;
         height: calc(100% + 10px);
-        background-color: #202C3D;
-        opacity: 0.8;
     }
+    /*
     .one_friend:first-child.not_select_friend::before{
         left: 0px;
         width: 110px;
@@ -454,5 +525,5 @@ input{
     }
     .game_details_text{
         font-size: 14px;
-    }
+    } */
 }
