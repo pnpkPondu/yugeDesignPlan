@@ -6,21 +6,11 @@
         <script type="text/javascript" src="./plugin/jquery-3.4.1.min.js"></script>
         <script type="text/javascript" src="./plugin/jsrender.min.js"></script>
         <link rel="stylesheet" href="./app/top/top.css">
-        <script type="text/javascript" src="./app/top/top.js"></script>
+        <!-- <script type="text/javascript" src="./app/top/top.js"></script> -->
+        <script type="text/javascript" src="./app/top/top2.js"></script>
     </head>
 
     <body class="patern_plan_1 color_plan_3 font_plan_2">
-        <div class="design_palans_panel hidden">
-            <select id="patern_plan" class="patern_plan_1">
-                <option value="1" selected>paternPlan1</option>
-            </select>
-            <select id="color_plan" class="color_plan_3">
-                <option value="3" selected>colorPlan3</option>
-            </select>
-            <select id="font_plan" class="font_plan_2">
-                <option value="2" selected>fontPlan2</option>
-            </select>
-        </div>
         <div class="body_panel middle_wrapper">
             <div>
                 <div class="header_panel middle_wrapper">
@@ -29,15 +19,17 @@
                         <div class="header_title_text">yuge</div>
                     </div>
                 </div>
-                <div id="tab_panel">
-                    <div id="tab_me" class="tab_item middle_wrapper select_tab">
-                        <div class="tab_item_title">Me</div>
-                    </div>
-                    <div id="tab_friends" class="tab_item middle_wrapper">
-                        <div class="tab_item_title">Friends</div>
-                    </div>
-                </div>
+
                 <div id="main_panel">
+                    <div id="menu_panel">
+                        <div id="menu_me" class="menu_item select_menu">
+                            Me
+                        </div>
+                        <div id="menu_friends_list" class="menu_item">
+                            Friends
+                        </div>
+                    </div>
+
                     <!-- テンプレート -->
                 </div>
 
@@ -46,34 +38,72 @@
 
 
         <script id="template_patern_plan_1_0" type="text/x-jsrender">
-            <div id="user_info_panel" class="one_item_panel">
-                <div class="item_name">Info</div>
-                <div class="item_contens">
-                    <div class="user_info_img_panel">
-                        <div class="user_info_img no_user_img"></div>
-                    </div>
-                    <div class="user_info_text_panel">
-                        <div class="user_name">testName</div>
-                        <div>
-                            <div class="user_info_label">オンライン状況</div>
-                            <div class="user_info_text">オンライン</div>
+
+            <div id="menu_me_main_panel">
+                <div id="user_info_panel" class="one_item_panel">
+                    <div class="item_contens">
+                        <div class="user_info_img_panel">
+                            <div class="user_info_img no_user_img"></div>
                         </div>
-                        <div>
-                            <div class="user_info_label">所持ゲーム数</div>
-                            <div class="user_info_text">20</div>
-                        </div>
-                        <div>
-                            <div class="user_info_label">総プレイ時間</div>
-                            <div class="user_info_text">500</div>
+                        <div class="user_info_text_panel">
+                            <div class="user_name">testName</div>
+                            <div>
+                                <div class="user_info_label">オンライン状況</div>
+                                <div class="user_info_icon online_icon online"></div>
+                                <div class="user_info_text">オンライン</div>
+                            </div>
+                            <div>
+                                <div class="user_info_label">所持ゲーム数</div>
+                                <div class="user_info_icon game_num_icon"></div>
+                                <div class="user_info_text">20</div>
+                            </div>
+                            <div>
+                                <div class="user_info_label">総プレイ時間</div>
+                                <div class="user_info_icon sum_time_icon"></div>
+                                <div class="user_info_text">500</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div id="user_game_panel" class="one_item_panel">
-                <div class="item_name">Games</div>
-                <div class="item_contens">
+                <div id="user_game_panel" class="one_item_panel">
+                    <div id="game_tab">
+                        <div id="has_game_tab" class="tab_item select_tab">Games</div>
+                        <div id="wish_list_tab" class="tab_item">WishList</div>
+                    </div>
 
+                    <div id="has_game_panel" class="item_contens">
+                            <div class="one_game">
+                                <div class="game_img no_game_img"></div>
+                                <div class="game_name">Game1</div>
+                            </div>
+                            <div class="one_game">
+                                <div class="game_img no_game_img"></div>
+                                <div class="game_name">Game2</div>
+                            </div>
+                            <div class="one_game">
+                                <div class="game_img no_game_img"></div>
+                                <div class="game_name">Game3</div>
+                            </div>
+                            <div class="one_game">
+                                <div class="game_img no_game_img"></div>
+                                <div class="game_name">Game4</div>
+                            </div>
+                            <div class="one_game">
+                                <div class="game_img no_game_img"></div>
+                                <div class="game_name">Game5</div>
+                            </div>
+                            <div class="one_game">
+                                <div class="game_img no_game_img"></div>
+                                <div class="game_name">Game6</div>
+                            </div>
+                            <div class="one_game">
+                                <div class="game_img no_game_img"></div>
+                                <div class="game_name">Game7</div>
+                            </div>
+                    </div>
+
+                    <div id="wish_game_panel" class="item_contens hidden">
                         <div class="one_game">
                             <div class="game_img no_game_img"></div>
                             <div class="game_name">Game1</div>
@@ -94,7 +124,16 @@
                             <div class="game_img no_game_img"></div>
                             <div class="game_name">Game5</div>
                         </div>
-                   
+                        <div class="one_game">
+                            <div class="game_img no_game_img"></div>
+                            <div class="game_name">Game6</div>
+                        </div>
+                        <div class="one_game">
+                            <div class="game_img no_game_img"></div>
+                            <div class="game_name">Game7</div>
+                        </div>
+                </div>
+
                 </div>
             </div>
         </script>
@@ -102,7 +141,6 @@
 
         <script id="template_patern_plan_1_1" type="text/x-jsrender">
             <div id="friends_list_panel" class="one_item_panel">
-                <div class="item_name">List</div>
                 <div class="item_contens">
 
                         <div class="one_friend">
@@ -128,39 +166,10 @@
                    
                 </div>
             </div>
-
-            <div id="friend_game_panel" class="one_item_panel">
-                <div class="item_name hidden">Games</div>
-                <div class="item_contens hidden">
-
-                        <div class="one_game">
-                            <div class="game_img no_game_img"></div>
-                            <div class="game_name">Game1</div>
-                        </div>
-                        <div class="one_game">
-                            <div class="game_img no_game_img"></div>
-                            <div class="game_name">Game2</div>
-                        </div>
-                        <div class="one_game">
-                            <div class="game_img no_game_img"></div>
-                            <div class="game_name">Game3</div>
-                        </div>
-                        <div class="one_game">
-                            <div class="game_img no_game_img"></div>
-                            <div class="game_name">Game4</div>
-                        </div>
-                        <div class="one_game">
-                            <div class="game_img no_game_img"></div>
-                            <div class="game_name">Game5</div>
-                        </div>
-                   
-                </div>
-            </div>
         </script>
 
         <script id="template_patern_plan_1_2" type="text/x-jsrender">
             <div id="game_details_panel" class="one_item_panel">
-                <div class="item_name">Game Details</div>
                 <div class="item_contens">
                     <div class="game_details_img_panel">
                         <div class="game_details_img no_game_img"></div>

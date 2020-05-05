@@ -17,16 +17,16 @@ setPaternPlan = function(plan, tab){
     );
 
     var h = $('#main_panel').height() - 132;
-    $('.item_contens').height(h);
+    //$('.item_contens').height(h);
 
     setAction();
 }
 
 setGameDetailsPanel = function(gameName){
-    $('#main_panel > div').addClass('hidden');
+    $('#menu_me_main_panel > div').addClass('hidden');
     var paternPlanNum = $('#patern_plan').prop('class').replace('patern_plan_', '');
 
-    $('#main_panel').append(
+    $('#menu_me_main_panel').append(
         $(`#template_patern_plan_${paternPlanNum}_2`).render()
     );
 
@@ -34,7 +34,7 @@ setGameDetailsPanel = function(gameName){
 
     $('#game_details_back_btn').click(function(){
         $('#game_details_panel').remove();
-        $('#main_panel > div').removeClass('hidden');
+        $('#menu_me_main_panel > div').removeClass('hidden');
     });
 }
 

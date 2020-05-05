@@ -7,7 +7,7 @@
 .design_palans_panel{
     width: 100%;
     height: 50px;
-}
+}68 140 173
 
 body.patern_plan_1{
     --login-items-panel-text-align: left;
@@ -21,12 +21,12 @@ body.color_plan_3{
     --input-border-color: #F4F5F6;
     --btn-bg-colr: #202C3D;
 
-    --select-tab-item-bg-color: #F4F5F6;
+    --select-tab-item-bg-color: #448CAD;
     --not-select-tab-item-bg-color: #202C3D;
-    --tab-item-font-color: #448CAD;
+    --tab-item-font-color: #F4F5F6;
     --contens-panel-bg-color: #F4F5F6;
     --contens-panel-font-color: #448CAD;
-    --contens-panel-border-color: #448CAD;
+    --contens-panel-border-color: rgb(31, 38, 41);
     --user-info-img-bg-color: #448CAD;
 }
 
@@ -72,7 +72,7 @@ input{
 
 .body_panel{
     width: 100%;
-    /* height: calc(100% - 50px); */
+    height: calc(100% - 50px);
     height: 100%;
     text-align: center;
 }
@@ -138,21 +138,21 @@ input{
 /* contens */
 #main_panel{
     width: 100%;
-    height: calc(100% - 250px);
+    height: calc(100% - 150px);
     min-height: 630px;
+    text-align: left;
 
     color: var(--contens-panel-font-color);
     background-color: var(--contens-panel-bg-color);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-radius: 5px;
 }
-.one_item_panel{
+/* .one_item_panel{
     display: inline-block;
     vertical-align: top;
     width: calc(50% - 20px);
     margin: 0 10px;
     padding-top: 30px;
-}
+} */
 .one_item_panel.hidden{
     display: none;
 }
@@ -169,17 +169,47 @@ input{
     text-align: left;
 }
 
+/* メニュー*/
+#menu_panel{
+    display: inline-block;
+    vertical-align: top;
+    width: calc(30% - 20px);
+    margin: 0 10px;
+    padding-top: 30px;
+}
+
+.menu_item{
+    width: calc(100% - 10px);
+    height: 50px;
+    padding-left: 10px;
+    line-height: 50px;
+    font-size: 18px;
+}
+
+.select_menu{
+    background-color: var(--select-tab-item-bg-color);
+    color: var(--tab-item-font-color);
+    border-radius: 5px;
+}
+
+
+#menu_me_main_panel{
+    display: inline-block;
+    vertical-align: top;
+    width: calc(70% - 20px);
+    margin: 0 10px;
+    padding-top: 30px;
+}
+
 /* ユーザー情報 */
-/* #user_info_panel.one_item_panel{
-    width: 210px;
-} */
 
 #user_info_panel .item_contens{
-    height: 248px;
+    height: 170px;
 }
 .user_info_img_panel{
-    width: 100%;
-    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
 }
 .user_info_img{
     display: inline-block;
@@ -196,16 +226,20 @@ input{
     background-size: 70%;
 }
 .user_info_text_panel{
-    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 170px);
+    padding-left: 20px;
     font-size: 20px;
-    text-align: center;
+    text-align: left;
 }
 .user_info_text_panel > div{
     font-size: 0;
+    margin: 5px 0;
 }
 .user_info_text_panel .user_name{
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     word-break: break-all;
 }
 .user_info_label,
@@ -215,13 +249,39 @@ input{
     font-size: 14px;
 }
 
+.user_info_icon{
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 2px;
+}
+
+.online_icon{
+    border-radius: 50%;
+}
+.online_icon.online{
+    background-color: chartreuse;
+}
+.game_num_icon{
+    background-image: url('../../assets/images/game.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.sum_time_icon{
+    background-image: url('../../assets/images/sum_time.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 .user_info_label{
-    width: 50%;
-    text-align: right;
+    width: 120px;
+    text-align: left;
 }
 .user_info_text{
-    width: calc(50% - 10px);
-    margin-left: 10px;
+    width: 50%;
     text-align: left;
 }
 
@@ -232,6 +292,34 @@ input{
     white-space: nowrap;
 }
 
+#game_tab{
+    width: 100%;
+    height: 50px;
+    border-bottom: 10px solid var(--select-tab-item-bg-color);
+}
+.tab_item{
+display: inline-block;
+vertical-align: middle;
+width: 50%;
+height: 100%;
+
+font-size: 24px;
+line-height: 60px;
+font-weight: bold;
+text-align: center;
+color: var(--tab-item-font-color);
+
+background-color: var(--not-select-tab-item-bg-color);
+}
+#game_tab .tab_item:first-child{
+border-top-left-radius: 5px;
+}
+#game_tab .tab_item:last-child{
+border-top-right-radius: 5px;
+}
+.select_tab{
+background-color: var(--select-tab-item-bg-color);
+}
 /* #user_game_panel.one_item_panel,
 #friend_game_panel.one_item_panel{
     width: calc(100% - 250px);
@@ -239,7 +327,7 @@ input{
 
 #user_game_panel .item_contens,
 #friend_game_panel .item_contens{
-    height: 100%;
+    height: calc(100% - 290px);
     overflow-x: hidden;
     overflow-y: auto;
     white-space: nowrap;
@@ -248,12 +336,13 @@ input{
     display: block;
     vertical-align: top;
     width: 100%;
-    margin-bottom: 20px;
+    margin: 10px 0;
 }
 .game_img{
-    width: 100%;
-    max-width: 600px;
-    height: 150px;
+    display: inline-block;
+    vertical-align: top;
+    width: 170px;
+    height: 80px;
     margin: 0 auto;
     border-radius: 5px;
     background-color: var(--user-info-img-bg-color);
@@ -263,12 +352,16 @@ input{
     background-size: cover;
 }
 .game_img.no_game_img{
-    background-size: 105px;
+    background-size: 50px;
 }
 .game_name{
-    width: 100%;
-    font-size: 24px;
-    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 160px);
+    padding-top: 20px;
+    padding-left: 10px;
+    font-size: 20px;
+    text-align: left;
 
     overflow: hidden;
     text-overflow: ellipsis;
@@ -276,14 +369,19 @@ input{
 }
 
 /* 友達一覧 */
-/* #friends_list_panel.one_item_panel{
-    width: 210px;
-} */
+#friends_list_panel.one_item_panel{
+    display: inline-block;
+    vertical-align: top;
+    width: calc(70% - 20px);
+    margin: 0 10px;
+    padding-top: 30px;
+}
 
 #friends_list_panel .item_name{
     margin-bottom: 0px;
 }
 #friends_list_panel .item_contens{
+    height: calc(100% - 60px);
     overflow-x: hidden;
     overflow-y: auto;
     white-space: nowrap;
@@ -291,10 +389,12 @@ input{
 .one_friend{
     position: relative;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .friend_img{
+    display: inline-block;
+    vertical-align: top;
     width: 150px;
     height: 150px;
     margin: 0 auto;
@@ -308,13 +408,14 @@ input{
 .friend_img.no_user_img{
     background-size: 70%;
 }
-.friend_img:first-child{
-    margin-top: 10px;
-}
 .friend_name{
-    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 160px);
+    padding-left: 10px;
     font-size: 24px;
-    text-align: center;
+    text-align: left;
+    line-height: 44px;
 
     overflow: hidden;
     text-overflow: ellipsis;
@@ -343,7 +444,6 @@ input{
 }
 #game_details_panel .item_name{
     width: 100%;
-    /* max-width: 600px; */
     margin: 0px auto 10px;
 }
 .game_details_img_panel{
@@ -355,7 +455,6 @@ input{
 .game_details_img{
     display: inline-block;
     width: 100%;
-    max-width: 600px;
     height: 150px;
     border-radius: 5px;
     background-color: var(--user-info-img-bg-color);
@@ -372,33 +471,33 @@ input{
     vertical-align: top;
     width: 100%;
     font-size: 20px;
-    text-align: center;
+    text-align: left;
 }
 .game_details_text_panel > div{
     font-size: 0;
 }
 .game_details_text_panel .game_details_game_name{
     font-size: 24px;
-    margin-bottom: 10px;
+    margin: 10px 0;
 }
 .game_details_label,
 .game_details_text{
     display: inline-block;
     vertical-align: middle;
     font-size: 14px;
+    margin: 5px 0;
 }
 .game_details_label{
-    width: 50%;
-    text-align: right;
+    width: 170px;
+    text-align: left;
 }
 .game_details_text{
-    width: calc(50% - 10px);
-    margin-left: 10px;
+    width: 50%;
     text-align: left;
 }
 
 .game_details_btn_panel{
-    text-align: center;
+    text-align: left;
     margin-top: 10px;
 }
 #game_details_back_btn{
@@ -430,7 +529,7 @@ input{
         font-size: 24px;
     }
     #main_panel {
-        height: calc(100% - 150px);
+        height: calc(100% - 100px);
         min-height: 0;
     }
 
